@@ -9,7 +9,7 @@ class complex{
         complex();
         complex(double real, double imaginary);
         void printComplex();
-        void addition(const complex &expression);
-        void subtraction(const complex &expression);
+        complex addition(const complex &expression);
+        complex subtraction(const complex &expression);
 };
 #endif

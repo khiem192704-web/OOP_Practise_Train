@@ -11,11 +11,13 @@ complex::complex(double real, double imaginary){
 void complex::printComplex(){
     cout<< realPart <<(imaginaryPart >= 0 ?"+":" ")<<imaginaryPart <<"i"<<endl;
 }
-void complex::addition(const complex &expression ){
+complex complex::addition(const complex &expression ){
     realPart += expression.realPart;
     imaginaryPart += expression.imaginaryPart;
+    return complex(realPart,imaginaryPart);
 }
 complex complex::subtraction(const complex &expression){
     realPart -= expression.realPart;
     imaginaryPart -= expression.imaginaryPart;
+    return complex(realPart,imaginaryPart);
 }

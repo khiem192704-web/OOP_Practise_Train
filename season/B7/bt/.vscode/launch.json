@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/learn code/C and c++/ki 3/oop/season/B6",
-      "program": "d:/learn code/C and c++/ki 3/oop/season/B6/build/Debug/outDebug",
+      "cwd": "d:/study/courses in university/ki 3/oop/season/B7/bt",
+      "program": "d:/study/courses in university/ki 3/oop/season/B7/bt/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

@@ -1,20 +1,22 @@
 #ifndef STACK_H
 #define STACK_H
-
-class stack{
-    private:
-        typedef struct Node{
+typedef struct Node{
             int item;
             struct Node*next;
-        }Node;
+            Node(const int &Item) : item(Item), next(nullptr){}
+
+}Node;
+class stack{
+    private:
         Node *top;
         int size;
     public:
-        int push();
-        Node *pop();
-        bool isEmpty();
-        int numOfElement();
-        void print();
-};
-
+        stack();
+        stack(const stack &other);
+        void push(const int& item);
+        int pop();
+        bool isEmpty() const ;
+        int numOfElement() const ;
+        void print() ;
+    };
 #endif
