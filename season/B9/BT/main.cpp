@@ -1,8 +1,7 @@
 #include "QuanLi.h"
 
 int main() {
-    QuanLi ql; // Khoi tao 1 doi tuong duy nhat (mac dinh n = 0)
-    int choose;
+    QuanLi ql;
 
     while (true) {
         cout << "\n====================================\n";
@@ -14,13 +13,25 @@ int main() {
         cout << "4. Hien thi sinh vien dat hoc bong\n";
         cout << "0. Thoat\n";
         cout << "Nhap lua chon: ";
-        cin >> choose;
+
+        int choose;
+        if (!(cin >> choose)) {
+            cout << "Gia tri khong hop le, vui long nhap so!\n";
+            cin.clear();
+            cin.ignore(1000, '\n');
+            continue;
+        }
 
         switch (choose) {
             case 1: {
                 int n;
                 cout << "Nhap so luong sinh vien: ";
-                cin >> n;
+                if (!(cin >> n) || n <= 0) {
+                    cout << "So luong phai la so nguyen lon hon 0!\n";
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    break;
+                }
                 ql.nhapDSSV(n);
                 break;
             }
@@ -31,22 +42,19 @@ int main() {
                 ql.xoaSV(MSSV);
                 break;
             }
-            case 3: {
+            case 3:
                 cout << "\n--- Danh sach sinh vien ---\n";
                 ql.hienThiDSSV();
                 break;
-            }
-            case 4: {
+            case 4:
                 cout << "\n--- Sinh vien dat hoc bong ---\n";
                 ql.hienThiSVXHB();
                 break;
-            }
             case 0:
                 cout << "Thoat chuong trinh.\n";
                 return 0;
             default:
                 cout << "Lua chon khong hop le! Vui long chon lai.\n";
-                break;
         }
     }
 }

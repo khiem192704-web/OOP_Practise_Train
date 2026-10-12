@@ -1,5 +1,6 @@
-#include"SVIT.h"
-#include"SVCK.h"
+#pragma once
+#include "SVIT.h"
+#include "SVCK.h"
 class QuanLi  {
     private:
         SV** DSSV;
