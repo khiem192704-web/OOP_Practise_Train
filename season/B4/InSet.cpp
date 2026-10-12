@@ -1,5 +1,5 @@
 #include <iostream>
-#include "IntSet.h"
+#include "InSet.h"
 using namespace std;
 IntSet::IntSet(const int& n) : n(n)
 {

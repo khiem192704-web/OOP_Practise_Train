@@ -31,7 +31,7 @@ istream& operator>>(istream& in, Matrix& m){
 }
 
 int& Matrix::operator()(const int& r, const int& c){
-    static int NGU;
+    static int NGU = 0;
     if(r >= 0 && r < this->r && c >= 0 && c < this->c) return *(*(this->p + r) + c);
     else return NGU;
 }

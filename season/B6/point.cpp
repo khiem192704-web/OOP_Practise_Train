@@ -53,5 +53,5 @@ const point& point::operator++(int){
 }
 
 bool point::operator==(const point& p) const{
-    return(this->xVal == p.xVal && this->yVal == p.yVal)
+    return(this->xVal == p.xVal && this->yVal == p.yVal);
 }

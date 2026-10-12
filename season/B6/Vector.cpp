@@ -20,12 +20,12 @@ Vector::~Vector(){
 }
 
 ostream& operator<<(ostream& out, const Vector& v){
-    for(int i = 0; i < v.n; i++) out<<v.data[i]<<" "; // out<<*(v.p+1)<<" ";
+    for(int i = 0; i < v.n; i++) out<<v.data[i]<<" "; // out<<*(v.data+i)<<" ";
     return out;
 }
 
 istream& operator>>(istream& in, Vector& v){
-    for(int i = 0; i< v.n; i++) in>>v.data[i]; // in>>*(v.p+i);
+    for(int i = 0; i< v.n; i++) in>>v.data[i]; // in>>*(v.data+i);
     return in;
 }
 
