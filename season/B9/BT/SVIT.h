@@ -4,9 +4,9 @@
 class SVIT : public SV
 {
 public:
-    SVIT(const string &MSSV, const string &Name);
-    ~SVIT();
-    double GPA() const override;
+    explicit SVIT(const std::string &MSSV = "", const std::string &Name = "");
+    ~SVIT() override = default;
+
     bool XHB() const override;
     void show() const override;
 };

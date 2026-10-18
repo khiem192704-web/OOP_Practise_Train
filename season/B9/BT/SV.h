@@ -1,35 +1,31 @@
 #pragma once
 #include "Mon.h"
-#include <iostream>
 #include <string>
 
-using namespace std;
 class SV
 {
 protected:
-    string MSSV;
-    string Name;
+    std::string MSSV;
+    std::string Name;
     MonHoc *DSMH;
     int soMon;
 
 public:
+    explicit SV(const std::string& mssv = "", const std::string& name = "");
     virtual ~SV();
-    virtual double GPA() const = 0;
+
+    // Rule of Three: tranh loi Double Free khi sao chep doi tuong
+    SV(const SV& other);
+    SV& operator=(const SV& other);
+
+    // Tinh da hinh
+    virtual double GPA() const;
     virtual bool XHB() const = 0;
-    virtual void show() const = 0;
+    virtual void show() const;
+
     void nhapDanhSachMon();
-    int getSoMon() const
-    {
-        return this->soMon;
-    }
+    int getSoMon() const { return this->soMon; }
     int tongTinChi() const;
-    double tinhGPA() const;
-    string getMSSV() const
-    {
-        return this->MSSV;
-    }
-    string getName() const
-    {
-        return this->Name;
-    }
+    const std::string& getMSSV() const { return this->MSSV; }
+    const std::string& getName() const { return this->Name; }
 };

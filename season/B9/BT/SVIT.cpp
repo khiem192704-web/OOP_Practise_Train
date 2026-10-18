@@ -1,22 +1,16 @@
 #include "SVIT.h"
-SVIT::SVIT(const string &MSSV, const string &Name)
-{
-    this->MSSV = MSSV;
-    this->Name = Name;
-    this->DSMH = nullptr;
-    this->soMon = 0;
-}
-SVIT::~SVIT()
-{
-}
+#include <iostream>
 
-double SVIT::GPA() const
-{
-    return this->tinhGPA();
-}
+using namespace std;
+
+SVIT::SVIT(const string &MSSV, const string &Name) 
+    : SV(MSSV, Name) {}
 
 bool SVIT::XHB() const
 {
+    // Dieu kien: Phai co mon hoc va GPA >= 8.0
+    if (this->soMon == 0)
+        return false;
     return (this->GPA() >= 8.0);
 }
 
